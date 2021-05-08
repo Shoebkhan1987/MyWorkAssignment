@@ -2,6 +2,7 @@ import requests
 import pytest
 import os
 from Utilities.CommonUtilities import *
+import logging as logger
 
 # Token required for authorization, better way to pass a token is using a dynamic variable from token API
 auth_token = "687ccbe4e07bf7e4cd20e210a8ec9711c3039ad1db87765c48b3a419bf8d64ac"
@@ -9,7 +10,7 @@ auth_token = "687ccbe4e07bf7e4cd20e210a8ec9711c3039ad1db87765c48b3a419bf8d64ac"
 
 # Following test case is used to fetch the data from gorest.co.in API and limit for number of records can be fetched is 20
 def test_get_request(my_url):
-
+    logger.info("TEst Created to fetch data from API")
     get_response_body = requests.get(my_url)
     assert get_response_body.status_code == 200
 
@@ -79,7 +80,6 @@ def test_delete_request(my_url):
     response_from_get_request = get_response_body.json()
     print (response_from_get_request['data']['message'])
     assert response_from_get_request['data']['message'] == "Resource not found"
-
 
 
 
