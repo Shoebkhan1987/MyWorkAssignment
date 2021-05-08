@@ -49,8 +49,13 @@ def test_get_request_specific_user(my_url):
     # Passed the response id global variable to fetch the data for the user created in post request
     get_response_body = requests.get(my_url + "/" + str(response_id))
     assert get_response_body.status_code == 200
-
     print(get_response_body.json())
+
+    response = get_response_body.json()
+    assert response['data']['id'] == response_id
+    
+
+    
 
 
 # Below Test case is created to update the existing data created in the post request
@@ -68,6 +73,13 @@ def test_put_request(my_url):
     
     assert get_response_body.status_code == 200
     print(get_response_body.json())
+    response = get_response_body.json()
+    print(response['data']['id'])
+
+    assert response['data']['name'] == name_value
+    assert response['data']['email'] == email_value
+
+
 
 # Test created to delete user data created in the post request
 def test_delete_request(my_url):
