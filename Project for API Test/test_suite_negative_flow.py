@@ -41,3 +41,40 @@ def test_invalid_emailValue_post_request(my_url):
     assert response_data['field'] == 'email'
     assert response_data['message'] == 'is invalid'
 
+
+@pytest.mark.negative
+def test_invalid_statusValue_post_request(my_url):
+
+    name_email_values = generate_random_name_and_email()
+    name_value = name_email_values['name']
+    email_value = name_email_values['email']
+
+    hed = {'Authorization': 'Bearer '+auth_token}
+
+    payload = {'name':name_value, 'gender':'Male','email':email_value,'status':'Test'}
+    get_response_body = requests.post(my_url, headers = hed, data = payload)
+
+    assert get_response_body.status_code == 200
+    response = get_response_body.json()
+    response_data = response['data'][0]
+    print(response_data['message'])
+    assert response_data['field'] == 'status'
+    assert response_data['message'] == 'can be Active or Inactive'
+
+@pytest.mark.negative
+def test_existing_emailValidation_post_request(my_url):
+
+    name_email_values = generate_random_name_and_email()
+    name_value = name_email_values['name']
+
+    hed = {'Authorization': 'Bearer '+auth_token}
+
+    payload = {'name':name_value, 'gender':'Male','email':'Test1@test123.com','status':'Active'}
+    get_response_body = requests.post(my_url, headers = hed, data = payload)
+
+    assert get_response_body.status_code == 200
+    response = get_response_body.json()
+    response_data = response['data'][0]
+    print(response_data['message'])
+    assert response_data['field'] == 'email'
+    assert response_data['message'] == 'has already been taken'
