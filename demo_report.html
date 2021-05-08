@@ -429,7 +429,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>demo_report.html</h1>
-    <p>Report generated on 08-May-2021 at 16:41:24 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 09-May-2021 at 00:08:23 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -440,13 +440,13 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Windows-10-10.0.19041-SP0</td></tr>
       <tr>
         <td>Plugins</td>
-        <td>{"html": "3.1.1", "metadata": "1.11.0"}</td></tr>
+        <td>{"allure-pytest": "2.8.40", "html": "3.1.1", "metadata": "1.11.0"}</td></tr>
       <tr>
         <td>Python</td>
         <td>3.7.3</td></tr></table>
     <h2>Summary</h2>
-    <p>5 tests ran in 2.75 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">5 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>13 tests ran in 5.75 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">13 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -460,13 +460,102 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
+          <td class="col-name">Project for API Test/test_suite_negative_flow.py::test_invalid_genderValue_post_request</td>
+          <td class="col-duration">0.50</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>can be Male or Female
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;POST /public-api/users HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Project for API Test/test_suite_negative_flow.py::test_invalid_emailValue_post_request</td>
+          <td class="col-duration">0.42</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>is invalid
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;POST /public-api/users HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Project for API Test/test_suite_negative_flow.py::test_invalid_statusValue_post_request</td>
+          <td class="col-duration">0.44</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>can be Active or Inactive
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;POST /public-api/users HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Project for API Test/test_suite_negative_flow.py::test_existing_emailValidation_post_request</td>
+          <td class="col-duration">0.35</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>has already been taken
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;POST /public-api/users HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Project for API Test/test_suite_negative_flow.py::test_get_request_specific_user_invalidId</td>
+          <td class="col-duration">0.35</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;GET /public-api/users/111111 HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Project for API Test/test_suite_negative_flow.py::test_invalid_emailValue_put_request</td>
+          <td class="col-duration">0.41</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;PUT /public-api/users/123 HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Project for API Test/test_suite_negative_flow.py::test_invalid_status_put_request</td>
+          <td class="col-duration">0.37</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>can be Active or Inactive
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;PUT /public-api/users/123 HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Project for API Test/test_suite_negative_flow.py::test_invalid_Id_delete_request</td>
+          <td class="col-duration">0.35</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;code&#x27;: 404, &#x27;meta&#x27;: None, &#x27;data&#x27;: {&#x27;message&#x27;: &#x27;Resource not found&#x27;}}
+Resource not found
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;DELETE /public-api/users/111111 HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
           <td class="col-name">Project for API Test/test_suite_positve_flow.py::test_get_request</td>
-          <td class="col-duration">0.55</td>
+          <td class="col-duration">0.35</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>200
-<br/></div></td></tr></tbody>
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:test_suite_positve_flow.py:13 TEst Created to fetch data from API
+DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;GET /public-api/users HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
@@ -475,36 +564,42 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>1872
-<br/></div></td></tr></tbody>
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>2395
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;POST /public-api/users HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Project for API Test/test_suite_positve_flow.py::test_get_request_specific_user</td>
-          <td class="col-duration">0.42</td>
+          <td class="col-duration">0.40</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;code&#x27;: 200, &#x27;meta&#x27;: None, &#x27;data&#x27;: {&#x27;id&#x27;: 1872, &#x27;name&#x27;: &#x27;vashb&#x27;, &#x27;email&#x27;: &#x27;bcsbfuyilr@test.com&#x27;, &#x27;gender&#x27;: &#x27;Male&#x27;, &#x27;status&#x27;: &#x27;Active&#x27;, &#x27;created_at&#x27;: &#x27;2021-05-08T18:11:09.477+05:30&#x27;, &#x27;updated_at&#x27;: &#x27;2021-05-08T18:11:09.477+05:30&#x27;}}
-<br/></div></td></tr></tbody>
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;code&#x27;: 200, &#x27;meta&#x27;: None, &#x27;data&#x27;: {&#x27;id&#x27;: 2395, &#x27;name&#x27;: &#x27;pdkgx&#x27;, &#x27;email&#x27;: &#x27;fsslqruaas@test.com&#x27;, &#x27;gender&#x27;: &#x27;Male&#x27;, &#x27;status&#x27;: &#x27;Active&#x27;, &#x27;created_at&#x27;: &#x27;2021-05-09T01:38:09.130+05:30&#x27;, &#x27;updated_at&#x27;: &#x27;2021-05-09T01:38:09.130+05:30&#x27;}}
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;GET /public-api/users/2395 HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Project for API Test/test_suite_positve_flow.py::test_put_request</td>
-          <td class="col-duration">0.39</td>
+          <td class="col-duration">0.38</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;code&#x27;: 200, &#x27;meta&#x27;: None, &#x27;data&#x27;: {&#x27;id&#x27;: 1872, &#x27;email&#x27;: &#x27;cnglcengqp@test.com&#x27;, &#x27;name&#x27;: &#x27;uahjv&#x27;, &#x27;status&#x27;: &#x27;Active&#x27;, &#x27;gender&#x27;: &#x27;Male&#x27;, &#x27;created_at&#x27;: &#x27;2021-05-08T18:11:09.477+05:30&#x27;, &#x27;updated_at&#x27;: &#x27;2021-05-08T18:11:10.304+05:30&#x27;}}
-<br/></div></td></tr></tbody>
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;code&#x27;: 200, &#x27;meta&#x27;: None, &#x27;data&#x27;: {&#x27;id&#x27;: 2395, &#x27;email&#x27;: &#x27;pwoebwjfih@test.com&#x27;, &#x27;name&#x27;: &#x27;wgtdk&#x27;, &#x27;status&#x27;: &#x27;Active&#x27;, &#x27;gender&#x27;: &#x27;Male&#x27;, &#x27;created_at&#x27;: &#x27;2021-05-09T01:38:09.130+05:30&#x27;, &#x27;updated_at&#x27;: &#x27;2021-05-09T01:38:09.923+05:30&#x27;}}
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;PUT /public-api/users/2395 HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Project for API Test/test_suite_positve_flow.py::test_delete_request</td>
-          <td class="col-duration">0.74</td>
+          <td class="col-duration">0.77</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>{&#x27;code&#x27;: 204, &#x27;meta&#x27;: None, &#x27;data&#x27;: None}
 Resource not found
-<br/></div></td></tr></tbody></table></body></html>
+<br/> -------------------------------Captured log call-------------------------------- <br/>DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;DELETE /public-api/users/2395 HTTP/1.1&quot; 200 None
+DEBUG    urllib3.connectionpool:connectionpool.py:813 Starting new HTTPS connection (1): gorest.co.in:443
+DEBUG    urllib3.connectionpool:connectionpool.py:393 https://gorest.co.in:443 &quot;GET /public-api/users/2395 HTTP/1.1&quot; 200 None<br/></div></td></tr></tbody></table></body></html>

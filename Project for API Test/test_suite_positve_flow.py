@@ -10,9 +10,10 @@ auth_token = "687ccbe4e07bf7e4cd20e210a8ec9711c3039ad1db87765c48b3a419bf8d64ac"
 
 # Following test case is used to fetch the data from gorest.co.in API and limit for number of records can be fetched is 20
 def test_get_request(my_url):
-    logger.info("TEst Created to fetch data from API")
+    logger.info("Test Created to fetch data from API")
     get_response_body = requests.get(my_url)
     assert get_response_body.status_code == 200
+
 
     print(get_response_body.status_code)
 
@@ -33,6 +34,9 @@ def test_post_request(my_url):
     assert get_response_body.status_code == 200
     response = get_response_body.json()
     print(response['data']['id'])
+
+    assert response['data']['name'] == name_value
+    assert response['data']['email'] == email_value
 
     # created a global variable so that it can be used for fetching specific user data, updating the request and deleting the request
     global response_id 
