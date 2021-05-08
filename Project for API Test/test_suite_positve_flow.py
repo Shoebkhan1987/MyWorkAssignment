@@ -3,7 +3,7 @@ import pytest
 import os
 from Utilities.CommonUtilities import *
 
-# Token value required for authentication, better way to pass a token is using a dynamic variable from token API
+# Token required for authorization, better way to pass a token is using a dynamic variable from token API
 auth_token = "687ccbe4e07bf7e4cd20e210a8ec9711c3039ad1db87765c48b3a419bf8d64ac"
 
 
