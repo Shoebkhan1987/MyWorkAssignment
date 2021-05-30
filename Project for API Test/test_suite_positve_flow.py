@@ -23,20 +23,18 @@ def test_post_request(my_url):
 
     # Go to CommonUtilities.py to see generate_random_name_and_email() function
     name_email_values = generate_random_name_and_email()
-    name_value = name_email_values['name']
-    email_value = name_email_values['email']
 
     hed = {'Authorization': 'Bearer '+auth_token}
 
-    payload = {'name':name_value, 'gender':'Male','email':email_value,'status':'Active'}
+    payload = {'name':name_email_values['name'], 'gender':'Male','email':name_email_values['email'],'status':'Active'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
 
     assert get_response_body.status_code == 200
     response = get_response_body.json()
     print(response['data']['id'])
 
-    assert response['data']['name'] == name_value
-    assert response['data']['email'] == email_value
+    assert response['data']['name'] == name_email_values['name']
+    assert response['data']['email'] == name_email_values['email']
 
     # created a global variable so that it can be used for fetching specific user data, updating the request and deleting the request
     global response_id 
@@ -53,9 +51,7 @@ def test_get_request_specific_user(my_url):
 
     response = get_response_body.json()
     assert response['data']['id'] == response_id
-    
-
-    
+        
 
 
 # Below Test case is created to update the existing data created in the post request
@@ -63,12 +59,10 @@ def test_put_request(my_url):
 
     # This will create a new values for name and email
     name_email_values = generate_random_name_and_email()
-    name_value = name_email_values['name']
-    email_value = name_email_values['email']
 
     hed = {'Authorization': 'Bearer '+auth_token}
 
-    payload = {'name':name_value, 'email':email_value,'status':'Active'}
+    payload = {'name':name_email_values['name'], 'email':name_email_values['email'],'status':'Active'}
     get_response_body = requests.put(my_url + "/" + str(response_id), headers = hed, data = payload)
     
     assert get_response_body.status_code == 200
@@ -76,8 +70,8 @@ def test_put_request(my_url):
     response = get_response_body.json()
     print(response['data']['id'])
 
-    assert response['data']['name'] == name_value
-    assert response['data']['email'] == email_value
+    assert response['data']['name'] == name_email_values['name']
+    assert response['data']['email'] == name_email_values['email']
 
 
 

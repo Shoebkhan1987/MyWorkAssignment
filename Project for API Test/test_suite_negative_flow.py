@@ -10,12 +10,10 @@ auth_token = "687ccbe4e07bf7e4cd20e210a8ec9711c3039ad1db87765c48b3a419bf8d64ac"
 def test_invalid_genderValue_post_request(my_url):
 
     name_email_values = generate_random_name_and_email()
-    name_value = name_email_values['name']
-    email_value = name_email_values['email']
 
     hed = {'Authorization': 'Bearer '+auth_token}
 
-    payload = {'name':name_value, 'gender':'Test','email':email_value,'status':'Active'}
+    payload = {'name':name_email_values['name'], 'gender':'Test','email':name_email_values['email'],'status':'Active'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
 
     assert get_response_body.status_code == 200
@@ -28,11 +26,10 @@ def test_invalid_genderValue_post_request(my_url):
 def test_invalid_emailValue_post_request(my_url):
 
     name_email_values = generate_random_name_and_email()
-    name_value = name_email_values['name']
 
     hed = {'Authorization': 'Bearer '+auth_token}
 
-    payload = {'name':name_value, 'gender':'Male','email':'Test','status':'Active'}
+    payload = {'name':name_email_values['name'], 'gender':'Male','email':'Test','status':'Active'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
 
     assert get_response_body.status_code == 200
@@ -47,12 +44,10 @@ def test_invalid_emailValue_post_request(my_url):
 def test_invalid_statusValue_post_request(my_url):
 
     name_email_values = generate_random_name_and_email()
-    name_value = name_email_values['name']
-    email_value = name_email_values['email']
 
     hed = {'Authorization': 'Bearer '+auth_token}
 
-    payload = {'name':name_value, 'gender':'Male','email':email_value,'status':'Test'}
+    payload = {'name':name_email_values['name'], 'gender':'Male','email':name_email_values['email'],'status':'Test'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
 
     assert get_response_body.status_code == 200
@@ -66,11 +61,10 @@ def test_invalid_statusValue_post_request(my_url):
 def test_existing_emailValidation_post_request(my_url):
 
     name_email_values = generate_random_name_and_email()
-    name_value = name_email_values['name']
 
     hed = {'Authorization': 'Bearer '+auth_token}
 
-    payload = {'name':name_value, 'gender':'Male','email':'Test1@test123.com','status':'Active'}
+    payload = {'name':name_email_values['name'], 'gender':'Male','email':'Test1@test123.com','status':'Active'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
 
     assert get_response_body.status_code == 200
@@ -93,12 +87,10 @@ def test_get_request_specific_user_invalidId(my_url):
 @pytest.mark.negative
 def test_invalid_emailValue_put_request(my_url):
     name_email_values = generate_random_name_and_email()
-    name_value = name_email_values['name']
-    email_value = name_email_values['name']
 
     hed = {'Authorization': 'Bearer '+auth_token}
 
-    payload = {'name':name_value, 'email':email_value,'status':'Active'}
+    payload = {'name':name_email_values['name'], 'email':name_email_values['name'],'status':'Active'}
     get_response_body = requests.put(my_url + "/" + str(123), headers = hed, data = payload)
     
     assert get_response_body.status_code == 200
@@ -106,13 +98,11 @@ def test_invalid_emailValue_put_request(my_url):
 @pytest.mark.negative
 def test_invalid_status_put_request(my_url):
     name_email_values = generate_random_name_and_email()
-    name_value = name_email_values['name']
-    email_value = name_email_values['email']
 
     hed = {'Authorization': 'Bearer '+auth_token}
 
-    payload = {'name':name_value, 'email':email_value,'status':'Test'}
-    get_response_body = requests.put(my_url + "/" + str(123), headers = hed, data = payload)
+    payload = {'name':name_email_values['name'], 'email':name_email_values['email'],'status':'Test'}
+    get_response_body = requests.put(my_url + "/" + str(8), headers = hed, data = payload)
     
     assert get_response_body.status_code == 200
     response = get_response_body.json()
