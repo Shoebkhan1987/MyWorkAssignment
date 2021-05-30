@@ -6,12 +6,11 @@ from Utilities.CommonUtilities import *
 
 # Token is required for authorization
 auth_token = "687ccbe4e07bf7e4cd20e210a8ec9711c3039ad1db87765c48b3a419bf8d64ac"
+hed = {'Authorization': 'Bearer '+auth_token}
 @pytest.mark.negative
 def test_invalid_genderValue_post_request(my_url):
 
     name_email_values = generate_random_name_and_email()
-
-    hed = {'Authorization': 'Bearer '+auth_token}
 
     payload = {'name':name_email_values['name'], 'gender':'Test','email':name_email_values['email'],'status':'Active'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
@@ -27,7 +26,6 @@ def test_invalid_emailValue_post_request(my_url):
 
     name_email_values = generate_random_name_and_email()
 
-    hed = {'Authorization': 'Bearer '+auth_token}
 
     payload = {'name':name_email_values['name'], 'gender':'Male','email':'Test','status':'Active'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
@@ -45,8 +43,6 @@ def test_invalid_statusValue_post_request(my_url):
 
     name_email_values = generate_random_name_and_email()
 
-    hed = {'Authorization': 'Bearer '+auth_token}
-
     payload = {'name':name_email_values['name'], 'gender':'Male','email':name_email_values['email'],'status':'Test'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
 
@@ -61,8 +57,6 @@ def test_invalid_statusValue_post_request(my_url):
 def test_existing_emailValidation_post_request(my_url):
 
     name_email_values = generate_random_name_and_email()
-
-    hed = {'Authorization': 'Bearer '+auth_token}
 
     payload = {'name':name_email_values['name'], 'gender':'Male','email':'Test1@test123.com','status':'Active'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
@@ -88,8 +82,6 @@ def test_get_request_specific_user_invalidId(my_url):
 def test_invalid_emailValue_put_request(my_url):
     name_email_values = generate_random_name_and_email()
 
-    hed = {'Authorization': 'Bearer '+auth_token}
-
     payload = {'name':name_email_values['name'], 'email':name_email_values['name'],'status':'Active'}
     get_response_body = requests.put(my_url + "/" + str(123), headers = hed, data = payload)
     
@@ -98,8 +90,6 @@ def test_invalid_emailValue_put_request(my_url):
 @pytest.mark.negative
 def test_invalid_status_put_request(my_url):
     name_email_values = generate_random_name_and_email()
-
-    hed = {'Authorization': 'Bearer '+auth_token}
 
     payload = {'name':name_email_values['name'], 'email':name_email_values['email'],'status':'Test'}
     get_response_body = requests.put(my_url + "/" + str(8), headers = hed, data = payload)
@@ -113,7 +103,6 @@ def test_invalid_status_put_request(my_url):
 
 @pytest.mark.negative
 def test_invalid_Id_delete_request(my_url):
-    hed = {'Authorization': 'Bearer '+auth_token}
 
     delete_request = requests.delete(my_url + "/" + str(111111), headers = hed)
     print(delete_request.json())

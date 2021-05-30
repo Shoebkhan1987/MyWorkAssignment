@@ -6,6 +6,7 @@ import logging as logger
 
 # Token required for authorization, better way to pass a token is using a dynamic variable from token API
 auth_token = "687ccbe4e07bf7e4cd20e210a8ec9711c3039ad1db87765c48b3a419bf8d64ac"
+hed = {'Authorization': 'Bearer '+auth_token}
 
 
 # Following test case is used to fetch the data from gorest.co.in API and limit for number of records can be fetched is 20
@@ -23,8 +24,7 @@ def test_post_request(my_url):
 
     # Go to CommonUtilities.py to see generate_random_name_and_email() function
     name_email_values = generate_random_name_and_email()
-
-    hed = {'Authorization': 'Bearer '+auth_token}
+ 
 
     payload = {'name':name_email_values['name'], 'gender':'Male','email':name_email_values['email'],'status':'Active'}
     get_response_body = requests.post(my_url, headers = hed, data = payload)
@@ -60,8 +60,6 @@ def test_put_request(my_url):
     # This will create a new values for name and email
     name_email_values = generate_random_name_and_email()
 
-    hed = {'Authorization': 'Bearer '+auth_token}
-
     payload = {'name':name_email_values['name'], 'email':name_email_values['email'],'status':'Active'}
     get_response_body = requests.put(my_url + "/" + str(response_id), headers = hed, data = payload)
     
@@ -77,8 +75,6 @@ def test_put_request(my_url):
 
 # Test created to delete user data created in the post request
 def test_delete_request(my_url):
-
-    hed = {'Authorization': 'Bearer '+auth_token}
 
     delete_request = requests.delete(my_url + "/" + str(response_id), headers = hed)
     print(delete_request.json())
