@@ -46,7 +46,7 @@ def test_invalid_statusValue_post_request(my_url, hed):
     assert get_response_body.status_code == 200
     response = get_response_body.json()
     response_data = response['data'][0]
-)
+
     assert response_data['field'] == 'status'
     assert response_data['message'] == 'can be Active or Inactive'
 
@@ -89,7 +89,7 @@ def test_invalid_status_put_request(my_url, hed):
     name_email_values = generate_random_name_and_email()
 
     payload = {'name':name_email_values['name'], 'email':name_email_values['email'],'status':'Test'}
-    get_response_body = requests.put(my_url + "/" + str(10), headers = hed, data = payload)
+    get_response_body = requests.put(my_url + "/" + str(246), headers = hed, data = payload)
     
     assert get_response_body.status_code == 200
     response = get_response_body.json()
