@@ -13,9 +13,6 @@ def test_get_request(my_url):
     assert get_response_body.status_code == 200
 
 
-    print(get_response_body.status_code)
-
-
 # Test created to create a new record
 def test_post_request(my_url, hed):
 
@@ -28,7 +25,6 @@ def test_post_request(my_url, hed):
 
     assert get_response_body.status_code == 200
     response = get_response_body.json()
-    print(response['data']['id'])
 
     assert response['data']['name'] == name_email_values['name']
     assert response['data']['email'] == name_email_values['email']
@@ -44,7 +40,6 @@ def test_get_request_specific_user(my_url):
     # Passed the response id global variable to fetch the data for the user created in post request
     get_response_body = requests.get(my_url + "/" + str(response_id))
     assert get_response_body.status_code == 200
-    print(get_response_body.json())
 
     response = get_response_body.json()
     assert response['data']['id'] == response_id
@@ -61,9 +56,7 @@ def test_put_request(my_url, hed):
     get_response_body = requests.put(my_url + "/" + str(response_id), headers = hed, data = payload)
     
     assert get_response_body.status_code == 200
-    print(get_response_body.json())
     response = get_response_body.json()
-    print(response['data']['id'])
 
     assert response['data']['name'] == name_email_values['name']
     assert response['data']['email'] == name_email_values['email']
@@ -74,14 +67,13 @@ def test_put_request(my_url, hed):
 def test_delete_request(my_url, hed):
 
     delete_request = requests.delete(my_url + "/" + str(response_id), headers = hed)
-    print(delete_request.json())
     response = delete_request.json()
     assert response['data'] == None
 
     # Below code will verify that the data is successfully removed
     get_response_body = requests.get(my_url + "/" + str(response_id))
     response_from_get_request = get_response_body.json()
-    print (response_from_get_request['data']['message'])
+
     assert response_from_get_request['data']['message'] == "Resource not found"
 
 

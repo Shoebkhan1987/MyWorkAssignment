@@ -15,7 +15,7 @@ def test_invalid_genderValue_post_request(my_url, hed):
     assert get_response_body.status_code == 200
     response = get_response_body.json()
     response_data = response['data'][0]
-    print(response_data['message'])
+
     assert response_data['message'] == 'can be Male or Female'
 
 @pytest.mark.negative
@@ -30,7 +30,7 @@ def test_invalid_emailValue_post_request(my_url, hed):
     assert get_response_body.status_code == 200
     response = get_response_body.json()
     response_data = response['data'][0]
-    print(response_data['message'])
+
     assert response_data['field'] == 'email'
     assert response_data['message'] == 'is invalid'
 
@@ -46,7 +46,7 @@ def test_invalid_statusValue_post_request(my_url, hed):
     assert get_response_body.status_code == 200
     response = get_response_body.json()
     response_data = response['data'][0]
-    print(response_data['message'])
+)
     assert response_data['field'] == 'status'
     assert response_data['message'] == 'can be Active or Inactive'
 
@@ -61,7 +61,7 @@ def test_existing_emailValidation_post_request(my_url, hed):
     assert get_response_body.status_code == 200
     response = get_response_body.json()
     response_data = response['data'][0]
-    print(response_data['message'])
+
     assert response_data['field'] == 'email'
     assert response_data['message'] == 'has already been taken'
 
@@ -94,7 +94,7 @@ def test_invalid_status_put_request(my_url, hed):
     assert get_response_body.status_code == 200
     response = get_response_body.json()
     response_data = response['data'][0]
-    print(response_data['message'])
+
     assert response_data['field'] == 'status'
     assert response_data['message'] == 'can be Active or Inactive'
 
@@ -102,9 +102,7 @@ def test_invalid_status_put_request(my_url, hed):
 def test_invalid_Id_delete_request(my_url, hed):
 
     delete_request = requests.delete(my_url + "/" + str(111111), headers = hed)
-    print(delete_request.json())
     response = delete_request.json()
 
-    print (response['data']['message'])
     assert response['data']['message'] == "Resource not found"
 
